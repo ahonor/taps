@@ -49,7 +49,15 @@ The resulting CGI must produce a JSON Map or JSON List.
 ]
 `
 
-## .resources JSON Format (proposed)
+## .resources XML Format
+
+`
+<project>
+    <node name="strongbad" tags="a,b" hostname="192.168.50.1" osFamily="unix"/>
+</project>
+`
+
+### .resources JSON Format (proposed)
 `
 {
     "{uuid}": {
