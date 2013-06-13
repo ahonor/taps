@@ -9,6 +9,16 @@ The underlying architecture relies on (a variation of) CGI.  The decision to use
 
 Each tap will make the 
 
+## Install
+You will need lighttpd which you can find here.
+
+```
+if ! rpm -q epel-release
+then
+    rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+fi  
+```
+
 ## How to Use
 Using `tapd` to create new taps is extremely easy.  The most common usage is the `.options` tap.  These taps are CGI scripts that live in a predefined directory.  The default directory is `/var/run/taps/`.  Any number of directories can be created under this directory which will translate into a path of the URL.
 
@@ -34,28 +44,28 @@ Suitable for parsing in rundeck or any other automation tool.
 ## .options JSON Format
 The resulting CGI must produce a JSON Map or JSON List.
 
-`
+```
 {
     "Key1": "Value1",
     "Key2": "Value2",
     ...
     "KeyN": "ValueN",
 }
-`
+```
 
-`
+```
 [
     "Value1", "Value2", ..., "ValueN",
 ]
-`
+```
 
 ## .resources XML Format
 
-`
+```
 <project>
     <node name="strongbad" tags="a,b" hostname="192.168.50.1" osFamily="unix"/>
 </project>
-`
+```
 
 ### .resources JSON Format (proposed)
 `
